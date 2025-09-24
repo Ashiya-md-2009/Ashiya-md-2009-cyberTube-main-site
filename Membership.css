@@ -1,0 +1,243 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  background: #000;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*============= free.html css ------*/
+    .free-main {
+     text-align: center;
+      padding: 80px 30px 30px 30px; /* leave space for navbar */
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+    }
+    
+.controls > .back-btn {
+    width: 50%; 
+    padding: 3px;
+    background: none;
+    border: 1px solid red;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #E60404B5;
+    text-shadow: 0 0 5px #CB0000C2;
+   }
+   
+    .free-right {
+      margin-top: 10%;
+      height: 170px;
+      width: 100%;
+      
+      border: 1px solid #00FF00;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.5);
+      text-align: center;
+      /* animation */
+      transform: translateY(100%);
+      opacity: 0;
+      animation: slideUp 1s ease-out forwards;
+    }
+    
+    @keyframes slideUp {
+      0% {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+   
+   
+    .free-right > h2 {
+      color: #00FF00;
+      margin-top: 10px;
+    }
+    
+    .free-right > p {
+      color: #fff;
+      margin-top: 15px;
+      line-height: 1.3;
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .free-right > button {
+      width: 30%;
+      margin-bottom: 20px;
+      padding: 5px;
+      background: none;
+      border: 2px solid #00FF00;
+      border-radius: 10px;
+    }
+   
+    .free-right > button > a {
+      outline:  none;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 12px;
+      display: flex;
+    }
+    
+    .free-image > img {
+      width: 360px;
+      height: 400px;
+      border-radius: 10px;
+      border: 1px solid #00FF00;
+      margin-top: 70px;
+      opacity: 0;
+      transform: rotateX(90deg) scale(0.7);
+      animation: flipOpen 1.2s ease-out forwards;
+    }
+    
+    @keyframes flipOpen {
+      0% {
+        opacity: 0;
+        transform: rotateX(90deg) scale(0.7);
+      }
+      50% {
+        opacity: 1;
+        transform: rotateX(-15deg) scale(1.05);
+      }
+      100% {
+        opacity: 1;
+        transform: rotateX(0deg) scale(1);
+      }
+    }
+    
+    
+    /* lesson-box css °=====*/
+    .lesson-box  {
+      color: #fff;
+      margin-top: 40px;
+    }
+    
+    .lesson-box > h2 {
+      margin-bottom: 12px;
+      color: #00FF00;
+    }
+    
+    .lesson-box > p {
+      line-height: 1.6;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+     /* Member-box==========*/
+    .Member-box > button {
+      width: 30%;
+      padding: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid #00FF00;
+      background: none;
+      border-radius: 10px;
+    } 
+     
+      
+    /*====== last-lesson csss */
+    .last-lesson {
+      background: none;
+      border: 1px solid #00FF00;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-top-right-radius: 20px;
+      width: 90%;
+      transform: translateX(20px);
+      
+      margin-top: 50px;
+    }
+    
+    .last-lesson > p {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+      transform: translateX(40px);
+      margin-top: 5px;
+      font-family: 'Share Tech Mono', monospace;
+    }
+    
+    .last-lesson > .box {
+      margin-top: 15px;
+      margin-bottom: 13px;
+    }
+    
+    .last-lesson > .box > p {
+      margin-top: 5px;
+      color: #00FF00;
+      display: flex;
+      transform: translateX(20px);
+      font-size: 15px;
+      font-weight: 600;
+    }
+    
+    /*======== skills css =====*/
+    .skills-div {
+      margin-top: 60px;
+      height: 540px;
+      border: 1px solid #00FF00;
+      border-radius: 19px;
+      background: rgba(0,0,0,0.3);
+    }
+   
+    
+    .skills-div > h4 {
+      margin-top: 10px;
+      font-size: 29px;
+      color: #fff;
+      text-shadow: 0 0 5px #fff;
+      font-weight: 800;
+    }
+    
+    .skills-div > .typewriter {
+      font-size: 15px;
+      font-weight: 600;
+      color: #00FF00;
+      line-height: 1.2;
+      display: flex;
+      margin-left: 15px;
+      margin-top: 15px;
+      border-right: 2px solid #00FF00B5;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    
+    /*======= skills-box - css ====*/
+    .skills-box {
+      height: 377px;
+      margin-top: 80px;
+      border: 1px solid #00FF00B3;
+      border-radius: 18px;
+      background: rgba(0,0,0,0.3)
+    }
+    
+    .skills-box > p {
+      display: flex;
+      line-height: 1.4;
+      margin-top: 5px;
+      font-size: 15px;
+      font-weight: 600;
+      margin-left: 10px;
+      color: #fff;
+      text-shadow: 0 0 6px #00FF00;
+    }

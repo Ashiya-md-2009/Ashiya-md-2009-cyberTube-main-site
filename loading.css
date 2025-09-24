@@ -1,0 +1,194 @@
+:root{
+  --bg:#000511;
+  --neon1:#33FF9AD6;
+  --neon2:#00FF00;
+  --muted:rgba(255,255,255,0.04);
+  --mono:"Courier New", Courier, monospace;
+}
+
+
+
+
+/* PRELOADER */
+#loaderWrapper{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--mono);
+  background:
+    radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(10,10,20,0.6), rgba(0,0,0,0.85));
+  backdrop-filter: blur(3px);
+  transition: opacity .6s ease, visibility .6s;
+}
+    
+
+/* Loader box */
+.loaderContainer{
+  width:min(820px,92vw);
+  padding:26px;
+  border-radius:12px;
+  border: 2px solid rgba(50,255,150,0.06);
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(8px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 50px rgba(50,255,150,0.02) inset;
+  position:relative;
+  overflow:hidden;
+}
+
+/* scanning beam background */
+.loaderContainer::before{
+  content:"";
+  position:absolute;
+  inset:-40% -20%;
+  background: linear-gradient(90deg, transparent 0%, rgba(80,255,160,0.03) 48%, rgba(80,255,160,0.06) 50%, rgba(80,255,160,0.03) 52%, transparent 100%);
+  transform: rotate(-12deg) translateX(-100%);
+  animation: beamAnim 6s linear infinite;
+  pointer-events:none;
+}
+@keyframes beamAnim{ to{ transform: rotate(-12deg) translateX(100%); } }
+
+/* TITLE */
+.loaderTitleRow{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  z-index:3;
+  position:relative;
+}
+.loaderLED > img {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 18px;
+  background: linear-gradient(135deg, rgba(0,255,140,0.18), rgba(0,200,255,0.12));
+  color: #001;
+  box-shadow: 0 6px 22px rgba(0,255,150,0.06);
+  border: 1px solid rgba(0,255,150,0.06);
+}
+.text-h1 > h1{
+  margin:0;
+  font-size:18px; 
+  letter-spacing:1px;
+  color: #00FF00;
+}
+
+.loaderSub{ 
+  margin:6px 0 14px 0; 
+  color:rgba(50,255,150,0.45); 
+  font-size:13px;
+  }
+
+/* TYPING + GLITCH */
+.loaderTyping{
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:2px;
+  white-space:nowrap;
+  overflow:hidden;
+  display:inline-block;
+  border-right: 1px solid rgba(50,255,150,0.25);
+  text-shadow: 0 0 5px #00FF00;
+  animation: caretBlink 900ms steps(1) infinite;
+  position:relative;
+}
+
+@keyframes caretBlink{ 50%{ border-color:transparent } }
+
+.loaderGlitch::before,
+.loaderGlitch::after{
+  content: attr(data-text);
+  position:absolute;
+  left:0; top:0;
+  transform-origin:left;
+  clip-path:rect(0,9999px,0,0);
+  opacity:0.8;
+}
+.loaderGlitch::before{
+  color:var(--neon1);
+  transform:translate(2px,-2px) skewX(-6deg);
+  animation: glitchAnim1 2.4s infinite;
+  mix-blend-mode:screen;
+}
+.loaderGlitch::after{
+  color:var(--neon2);
+  transform:translate(-2px,2px) skewX(6deg);
+  animation: glitchAnim2 3s infinite;
+  mix-blend-mode:screen;
+}
+@keyframes glitchAnim1{
+  0%{clip-path: inset(0 0 100% 0);} 10%{clip-path: inset(0 0 65% 0);}
+  20%{clip-path: inset(30% 0 50% 0);} 30%{clip-path: inset(0 0 0 0);} 100%{clip-path: inset(0 0 100% 0);}
+}
+@keyframes glitchAnim2{
+  0%{clip-path: inset(100% 0 0 0);} 30%{clip-path: inset(40% 0 10% 0);}
+  60%{clip-path: inset(0 0 0 0);} 100%{clip-path: inset(100% 0 0 0);}
+}
+
+/* PROGRESS BAR */
+.progressWrapper{ margin-top:18px; display:flex; align-items:center; gap:12px; }
+
+.progressTrack{
+  flex:1;
+  height:14px;
+  background:rgba(255,255,255,0.03);
+  border-radius:999px;
+  overflow:hidden;
+  border:1px solid rgba(50,255,150,0.06);
+}
+.progressFill{
+  height:100%;
+  width:0%;
+  background: repeating-linear-gradient(45deg, #00FF00 0 8px, transparent 8px 16px);
+  box-shadow: inset 0 4px 18px rgba(0,0,0,0.6);
+  transition: width .12s linear;
+}
+
+.progressPercent{ 
+  width:70px;
+  text-align:right; 
+  font-weight:700; 
+  color: #00FF00;
+}
+
+/* LOG LINES */
+.logContainer { 
+  margin-top:14px; 
+  max-height:96px; 
+  overflow:auto; 
+  font-size:12px; 
+  color: #00FF00;
+}
+
+.logLine {
+  opacity:0;
+  transform:translateY(6px);
+  animation: showLineAnim .36s forwards;
+  margin:6px 0;
+  white-space:pre-wrap;
+}
+@keyframes showLineAnim{ to{ opacity:1; transform:none; } }
+
+/* MAIN SITE + NAVBAR */
+#siteMain{
+  display:none;
+  transition: opacity .6s;
+}
+#siteMain.show{ display:block; opacity:1; }
+
+#mainNavbar{
+  display:none; /* hide during preloader */
+  color: #Fff;
+}
+
+#mainNavbar.show{ 
+  display:flex; 
+  justify-content:space-between;
+  align-items:center; 
+}

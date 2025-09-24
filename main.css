@@ -1,0 +1,236 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  background: #000;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*========== main.html csss ===========*/
+ .main-div {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 1200px;
+  margin: 4px auto 50px;
+  padding: 27% 20px;
+ }
+ 
+ .controls > .back-btn {
+    width: 50%; 
+    padding: 3px;
+    background: none;
+    border: 1px solid red;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #E60404B5;
+    text-shadow: 0 0 5px #CB0000C2;
+   }
+ 
+ 
+ .main-image > img {
+   width: 160px;
+   border-radius: 50%;
+   border: 1px solid #00FF00;
+   box-shadow: 0 0 5px #00FF00;
+   transition: .4s;
+ }
+ 
+ .main-image > img:hover {
+   transform: rotate(15deg);
+   box-shadow: 0 0 10px #00FF00;
+ }
+ 
+.main-image > h1 {
+   font-size: 20px;
+   font-weight: 800;
+   color: #00FF00;
+ }
+ 
+ .main-image > p {
+   font-size: 16px;
+   padding: 10px;
+   font-weight: 600;
+   color: #fff;
+ }
+ 
+ .last-image > img {
+   width: 300px;
+   border-radius: 10px;
+   margin-top: 80px;
+ }
+ 
+ .last-image > h2  {
+   color: #00FF00;
+   font-size: 30px;
+ }
+ 
+ .last-image > p {
+   padding: 10px;
+   text-align: center;
+   line-height: 1.4;
+   font-weight: 600;
+ }
+ 
+ .last-image > span {
+  display:inline-block; 
+  width: 100%; 
+  height:2px; 
+  background: #21CB0A9C;
+  margin-bottom: 10px;
+ }
+ 
+ 
+ .last-div > h3{
+   margin-top: 90px;
+   margin-bottom: 90px;
+   font-size: 20px;
+   font-weight: 600;
+   color: #fff;
+   text-shadow: 0 0 5px #fff;
+ }
+ 
+ .last-div > h2 {
+   font-size: 30px;
+   color: #00FF00;
+ }
+ 
+ .last-div > p {
+   padding: 10px;
+   text-align: center;
+   line-height: 1.4;
+   font-weight: 600;
+ }
+ 
+ .last-div > span {
+  display:inline-block; 
+  width: 100%; 
+  height:2px; 
+  background: #21CB0A9C;
+  margin-bottom: 10px;
+ }
+ 
+ .hacker-box {
+   margin-top: 100px;
+   padding: 10px;
+   line-height: 1.4;
+   text-shadow: 0 0 5px #00FF00;
+   color: #fff;
+   font-weight: 600;
+   font-size: 18px;
+ }
+ 
+ .hacker-main {
+   margin-top: 70px;
+   text-align: center;
+ }
+ 
+ .hacker-main > h2 {
+   margin-bottom: 10px;
+   color: #00FF00;
+ }
+ 
+ .hacker-main > p {
+   line-height: 1.4;
+   color: #fff;
+   font-weight: 600;
+   text-shadow: 0 0 5px #00FF00;
+ }
+
+  .hacker-main > img {
+    width: 350px;
+    margin-top: 70px;
+    border-radius: 10px;
+    border: 1px solid #00FF00;
+  }
+
+/*=============== number Change =====*/
+.counter-box {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .number {
+      font-size: 60px;
+      font-weight: 800;
+      color: limegreen;
+      margin-top: 30px;
+    }
+
+    .label {
+      font-size: 17px;
+      margin-top: 17px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #fff;
+    } 
+    
+    /*====== index-box/=======*/
+  .last-index {
+      margin-top: 30px;
+      background: rgba(0,0,0,0.5);
+      border: 1px solid #505050BA;
+      border-radius: 17px;
+      height: 165px;
+      transition: .4s;
+    }
+    
+    .last-index:hover {
+      transform: rotate(2deg);
+      border: 1px solid #00FF00;
+      box-shadow: 0 0 7px #00FF00;
+    }
+  
+    .index-box > h1  {
+      color: #fff;
+      text-shadow: 0 0 6px #fff;
+    }
+    
+    .last-index > h3 {
+      color: #00FF00;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: 27px;
+    }
+    
+    .last-index > p {
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    
+    .last-index > button {
+      width: 40%;
+      padding: 5px;
+      border: 1px solid #00FF00;
+      background: none;
+      border-radius: 17px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      transition: .4s;
+      
+    }
+    
+    .last-index > .btn {
+      transform: translateY(-4px)
+    }
+    
+    .last-index > button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 5px #00FF00;
+    }

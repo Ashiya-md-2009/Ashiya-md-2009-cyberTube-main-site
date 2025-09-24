@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CyberTube</title>
+  
+ <!-- Google Fonts for Sinhala & English -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala&family=Courier+Prime&display=swap" rel="stylesheet"> 
+  
+  <!--- 👉---->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!---- font--->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="animation.css">
+<link rel="stylesheet" href="loading.css">
+</head>
+<body>
+  
+  <!-- PRELOADER -->
+<!-- PRELOADER -->
+<div id="loaderWrapper">
+  <div class="loaderContainer">
+    <div class="loaderTitleRow">
+      <div class="loaderLED">
+        <img src="CyberTube.jpg" alt="hacking"/>
+      </div>
+      <div class="text-h1">
+        <h1>CYBERTUBE</h1>
+        <p class="loaderSub">ETHICAL-HACKING...</p>
+      </div>
+    </div>
+
+    <div style="margin-top:16px">
+      <div class="loaderTyping loaderGlitch" id="typingText" data-text="Loading…"style="color:#00FF00;">Loading…</div>
+    </div>
+
+    <div class="progressWrapper">
+      <div class="progressTrack"><div class="progressFill" id="progressBar"></div></div>
+      <div class="progressPercent" id="progressNum">0%</div>
+    </div>
+
+    <div class="logContainer" id="logArea"></div>
+  </div>
+</div>
+  
+  
+  
+  
+  
+  
+  
+<canvas id="matrixCanvas"></canvas>
+<div class="bg-overlay" aria-hidden="true"></div>
+
+<header class="nav" role="navigation" id="mainNavbar">
+  <div class="logo">
+    <div class="logo-badge"><img src="CyberTube.jpg" alt="header" /></div>
+    <div class="logo-text">
+      <div class="logo-main">
+        <div class="glitch" data-text="cybertube"><span class="title type">cybertube</span></div>
+        <div class="cursor" aria-hidden="true"></div>
+      </div>
+      <div style="font-size:11px;color: #444;margin-top:4px; font-weight: 600;">Ethical • Hacking</div>
+    </div>
+  </div>
+
+  <nav class="navlinks">
+    <ul id="menu">
+      <li><a href="#home" data-key="home"><span class="inner">HOME</span></a></li>
+      <li><a href="#browse" data-key="browse"><span class="inner" id="openModal">Profile</span></a></li>
+      <li><a href="#download" data-key="download"><span class="inner">DOWNLOAD</span></a></li>
+      <li><a href="#tools" data-key="tools"><span class="inner">TOOLS</span></a></li>
+      <li><a href="#about" data-key="about"><span class="inner">ABOUT</span></a></li>
+    </ul>
+    <div id="indicator" class="active-indicator"></div>
+  </nav>
+
+  <div class="controls">
+    <div class="search">
+      <input placeholder="Search..." />
+    </div>
+    <div id="clock">12:00:00 AM</div>
+    <button class="hamburger" id="hambtn"><span class="bar"></span></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#home">HOME</a>
+  <a href="#tools">TOOLS</a>
+  <a href="#about">ABOUT</a>
+  
+  <div class="nav-icon">
+    <!---- whatsapp ----->
+    <a href="https://whatsapp.com/channel/0029Va4Xo1o4yltJJsKxjf0A"><i class="fa-brands fa-whatsapp" style="color: #00FF00;"></i></a>
+    <!---- web site ----->
+    <a href="https://cybertube.free.nf"><i class="fa-solid fa-blog"></i></a>
+    <!---- Telegram ------>
+    <a href="https://t.me/CyberTubeEthical"><i class="fa-brands fa-telegram" style="color: #178DE0;"></i></a>
+    <!-------- facebook ------>
+    <a href="https://www.facebook.com/CyberTube1"><i class="fa-brands fa-facebook" style="color: #1542AF;"></i></a>
+    <!------ discord ----->
+    <a href="https://discord.gg/Y9EtJN66q8"><i class="fa-brands fa-discord" style="color: #0141A1;"></i></a>
+    <!------ youtube ---------->
+    <a href="https://youtube.com/@cybertubelk"><i class="fa-brands fa-youtube" style="color: red;"</i></a>
+  </div>
+</div>
+
+
+<!-- Backdrop + Modal -->
+<div class="backdrop" id="backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="card" role="document" aria-labelledby="profileTitle">
+   <button class="close-x" id="closeBtn" aria-label="Close modal">&times;</button>
+
+    <div class="avatar" aria-hidden="true"><img src="CyberTube.jpg" alt="img" /></div>
+    <h2 id="profileTitle">CyberTube</h2>
+    <div class="sub">Ethical Hacking</div>
+
+    <div class="pills" role="list">
+      <!-- WhatsApp -->
+      <a class="pill" role="listitem" href="https://wa.me/94721986326" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="text">
+          <div class="title">WhatsApp</div>
+          <div class="muted">+94 72 198 6326</div>
+        </div>
+      </a>
+      <!-- WhatsApp chanel -->
+    <a class="pill" role="listitem" href="https://whatsapp.com/channel/0029Va4Xo1o4yltJJsKxjf0A" target="_blank" rel="noopener noreferrer">
+        <div class="icon">🌐</div>
+        <div class="text">
+          <div class="title">WhatsApp channel</div>
+          <div class="muted">cyberTube</div>
+        </div>
+      </a>
+      <!---- Telegram--->
+      <a class="pill" role="listitem" href="https://t.me/CyberTubeEthical" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><i class="fa-brands fa-telegram"></i></div>
+        <div class="text">
+          <div class="title">Telegram</div>
+          <div class="muted">Ethical Hacking</div>
+        </div>
+      </a>
+     <!-----Facebook------->
+     <a class="pill" role="listitem" href="https://www.facebook.com/CyberTube1" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+        <div class="text">
+          <div class="title">CyberTube (Cyber Security)</div>
+          <div class="muted">Ethical Hacking Learn With Me</div>
+        </div>
+      </a>
+      <!----- Discord Server ------>
+      <a class="pill" role="listitem" href="https://discord.gg/Y9EtJN66q8" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><i class="fa-brands fa-discord"></i></div>
+        <div class="text">
+          <div class="title">Discord Server</div>
+          <div class="muted">Ethical Hacking</div>
+        </div>
+      </a>
+      <!-----web site ------->
+      <a class="pill" role="listitem" href="https://www.cybertube.free.nf" target="_blank" rel="noopener noreferrer">
+        <div class="icon">🌐</div>
+        <div class="text">
+          <div class="title">cyberTube-web</div>
+          <div class="muted">Ethical Hacking</div>
+        </div>
+      </a>
+      <!---- YouTube ------->
+      <a class="pill" role="listitem" href="https://youtube.com/@cybertubelk" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><i class="fa-brands fa-youtube"></i></div>
+        <div class="text">
+          <div class="title">YouTube</div>
+          <div class="muted">Ethical Hacking</div>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<main class="hero" id="siteMain">
+ <div class="image">
+<img src="CyberTube.jpg" alt="Hacking"/>
+<h1>නොමිලේ සිංහලේන් <b><i>ETHICAL HACKING </b></i>ඉගේන ගමුද</h1>
+<button><a href="https://whatsapp.com/channel/0029Va4Xo1o4yltJJsKxjf0A">JOIN NOW</a></button>
+</div>
+
+<!---- box 1 ---->
+    <div class="box-div" id="bottomText3">
+      <h4>Membership</h4>
+      <i class="fa-solid fa-house"></i>
+      <p>Unlock exclusive membership benefits, enhancing<br>your learning journey in the cybersecurity realm.</p>
+     <a href="#" id="link1">LEARN MORE</a>
+    </div>
+    
+     <!---- box 2 ---->
+    <div class="box-div">
+      <h4>Free</h4>
+     <i class="fa-solid fa-arrows-rotate"></i>
+      <p>Select this to receive information about the free <br> course and information about it.</p>
+     <a href="#" id="link2">LEARN MORE</a>
+    </div>
+    
+    <!---- box 3 ---->
+    <div class="box-div">
+      <h4>Social Media</h4>
+       <i class="fa-solid fa-blog"></i>
+      <p>Join a supportive community that thrives on<br>knowledge sharing and ethical hacking expertise.</p>
+     <a href="">LEARN MORE</a>
+    </div>
+    
+    <!-----box 4 ---->
+    <div class="box-div">
+      <h4>Cyber Security</h4>
+     <i class="fa-solid fa-fingerprint"></i>
+      <p>The difference between Cyber Security Ethical<br>hacking and what we teach</p>
+     <a href="#" id="link4">LEARN MORE</a>
+    </div>
+
+
+<div class="last-box">
+  <h4>📌 Sri Lanka Number 1'st Ethical Hacking Platform</h4>
+  <p>ලංකාවෙ පලමු වරට නොමිලේම Ethical Hacking</p>
+  <p>Practical  සමගින් Live Real World ඉගෙන ගන්න</p>
+  <p>කැමති ඔයාලට දැන් පුලුවන් අපගෙ lesson</p>
+  <p>සමග එකතු වෙලා Ethical</p>
+  <br>
+  <p>Hacking සරලව ඉගෙන ගන්න. මෙහිදි අපි Free</p>
+  <p>සහා Membership ලෙස කොටස් දෙකක් කරනවා.</p>
+  <p>ඊට හේතුව අප උගන්වන දේවල් නීතිවිරෝධි</p>
+  <p>ලෙස භාවිත කිරිමට ඇති</p>
+  <p>සම්භාවිතාවයි.<br><br> ඔබට කැමති නම් Free lesson</p>
+  <p>අවසන් වූ පසු Membership ලබා ගැනීමට</p>
+  <p>හැකියාව ඇත.</p>
+</div>
+
+
+
+<!--===== button-text =======--->
+ <div class="buttons">
+    <button onclick="changeText('text1')">Details</button>
+    <button onclick="changeText('text2')">Vision</button>
+    <button onclick="changeText('text3')">The Threat</button>
+    <button onclick="changeText('text4')">Channels</button>
+  </div>
+  
+  <!-- Hidden texts -->
+  <!----- button-text 1 ----->
+  <div id="text1" class="btn-text">
+    <h3>කව්ද අපි?</h3>
+    <span></span>
+    <p>අපි CyberTube, ලංකාව තුල නොමිලේ Ethical Hacking උගන්වන එකම තැන. ඔයාලාට අපෙන් ඔයාලා කැමති නම් මුල ඉදලා සරලව Ethical Hacking ඉගෙන ගන්න පුලුවන්. ඔයාල ඉගෙන ගන්න කැමති නම් අපි උගන්වන්න සූදානම්. මේ වන විට සිසුන් 2000+ අධික ප්‍රමාණයක් අපි එක්ක එකතු වෙලා ඉන්නවා. අපි ඔයාලාව Cyber ලෝකය වටෙ රව්මක් එක්ක යන්න සූදානම්.</p>
+    <br>
+    <h3>කොහොමද උගන්වන්නෙ ?</h3>
+    <span></span>
+    <p>අපි ඔයාලාට Youtube මගින් සතියකට වරක් Live Lesson පවත් වන අතර අනෙකුත් Linux සම්බන්ධ video Facebook පිටුව තුල පළ කරනවා. ඊට හේතුව Youtube Policy වැනි හේතුන් වේ. </p>
+  </div>
+  
+  <!----- button-text 2 ----->
+  <div id="text2" class="btn-text">
+    <h3>අපගෙ දැක්ම සහා ඉලක්කය</h3>
+    <span></span>
+    <p>ලංකාව යනු ඉතාමත් දුශ්කර උවත් ඔබ දකින්න ඇති ඒ පිලිබද තැකීමකින් තොරව වෙනත් රට වල අයවලුන් ලංකාවට Cyber ප්‍රහාර එල්ල කරන බව, මාගෙ සහා මම සමග එකතු වී සිටිම සැම කෙනෙකුගෙම ඉලක්කය අනාගතයෙ ලංකාව Cyber ලෝකය දිණා ගැනීමයි.</p>
+    <ul>
+      <li>Hacker යනු යම් කිසි දෙයක් විනාශ කරන අයකු වේ. නමුත් අප විසින් බිහි කරණු ලබන Ethical Hacker එම Hacker පරදවා ජය ගත යුතු අතර අපෙන් ඉගෙන ගන්නා පිරිස ඒ සදහා සූදාණම් කිරිම අපගෙ එකම ඉලක්කය වේ.</li>
+    </ul>
+    
+  </div>
+  <!----- button-text 3 ----->
+  <div id="text3" class="btn-text">
+    <p>අපට ඇති එකම තර්ජනය අපගෙන් ඉගෙන ගන්නා අයවලුන් මේ උගන්වන දේවල් අයහපත් ආකාරයෙන් යෙදවිය හැකි බවයි. එ නිසා අප Membership ලෙස නව පැකේජයක් හදුන්වා දුන් අතර අප එයට ගන්නා සෑම කෙනෙකුගෙම අනන්‍යතාව සහා වෙනත් ආකාර වලින් ඔවුන්ව හදුනා ගැනිමට ක්‍රම භාවිතා කරයි.</p>
+    <br>
+    <p>මේ වන විට සිසුන් 2000+ ප්‍රමාණයක් අප සමග එකතු වී ඇත. මේ අයවලුන් සදහා අපි CTF Program සෑම අව්රුද්දකම සහා පොඩි challenge ලබා දී පොඩි gift ලබා දීමට කටයුතු කරමින් පවති.</p>
+  </div>
+  <!----- button-text 4 ----->
+  <div id="text4" class="btn-text">
+    <h3>සිංහලෙන් නොමිලේම Ethical Hacking ඉගෙන ගන්න අපිත් එක්ක සෙට් වෙන්න!</h3>
+    <br>
+    <p>ඔබට ඉක්මනින් අපෙ live lesson සහා අනෙකුත් තොරතුරු වල notification ලබා ගන්න පහත Whatsapp Group සදහා Join වෙන්න.</p>
+    <br>
+    <button><a href="">WhatsApp 01 group</a></button>
+    
+    <button><a href="">WhatsApp 02 group</a></button>
+    <br>
+    <br>
+    <p>ඔබට Hacking පිලිබද ( errors වැනි ) ප්‍රශ්ණ ඇත්තම් මෙම chat group එකට join වෙන්න.</p>
+  </div>
+
+
+<!---- last-image-box ------>
+ <div class="image-box">
+   <img src="last-image-box.jpg" alt="hacker-image"/>
+   
+   <h2>මොකක්ද Ethical Hacking කියන්නෙ?</h2>
+   <p>Ethical Hacking කියන්නේ තොරතුරු තාක්ෂණ පද්ධතිවල, ජාලවල, හෝ යෙදුම්වල ආරක්ෂාව පරීක්ෂා කරන්න විශේෂඥයන් භාවිතා කරන ක්‍රමවේදයක්. මේකේදී, "හැකර්" කෙනෙක් විදිහට කටයුතු කරන්නේ නීත්‍යානුකූලව, ඒ කියන්නේ අවසරය ඇතුව, පද්ධතියක දුර්වලතා හඳුනාගෙන ඒවා නිවැරදි කරන්න උදවු කරන්න.</p>
+   
+   <h3>Ethical Hackerලා කරන ප්‍රධාන කාර්යයන්</h3>
+   <div class="p-text">
+   <p>✔️ Penetration Testing (Pentesting)
+   <p>✔️ Vulnerability Assessment</p>
+   <p>✔️ Social Engineering Attacks</p>
+   <p>✔️ Wireless Hacking</p>
+   <p>✔️ Web Application Hacking</p>
+   <p>✔️ Malware Analysis</p>
+   <p>✔️ More...</p>
+   </div>
+ </div>
+
+
+<div class="main">
+   <h4>Cyber security VS Ethical Hacking</h4>
+   <p>guys <b>අපි මේ කරන්නෙ</b> Ethical Hacking lesson ( practical <b>සමග</b> ) Cyber security <b>නෙමෙ ඒදෙක අතර වෙනස පහලින් දාන්නම්.</b></p>
+<button onclick="goToMain()">LEARN MORE</button>
+ </div>
+
+
+
+<div class="hacker-main">
+   <h2>Ethical Hacking</h2>
+   <p>නොමිලේ Ethical Hacking ඉගෙන ගන්න කැමති ඔබට CyberTube අප වීසින් නොමිලේ ලබා දෙන Lesson ලබා ගැනීමට හැකියාව ඇත. ඒ වගේම ඔබට වැඩි දුර ඉගෙනීමට අවශ්‍ය නම් අපගෙ Membership හට Join වීමට හැකියාව ඇත.</p>
+   
+   <!----- box-1------>
+   <div class="counter-box" id="bottomText4">
+    <div class="number" data-target="7000">0</div>
+    <div class="label">YOUTUBE SUBSCRIBERS</div>
+  </div>
+  
+  <!----- box-2-------->
+  <div class="counter-box">
+    <div class="number" data-target="9000">0</div>
+    <div class="label">FACEBOOK FOLLOWERS</div>
+  </div>
+
+  <!----- box-3-------->
+  <div class="counter-box">
+    <div class="number" data-target="57">0</div>
+    <div class="label">MEMBERSHIP USERS</div>
+  </div>
+
+
+<!----- img-box------>
+  <img src="Hacker-main-img.jpg" alt="Hacking" />
+    </div>
+    
+ <!------ index-box ------->
+ <div class="index-box">
+   <h1>ඔබට අවශ්‍ය lesson තෝරන්න.</h1>
+   
+   <!--- last-index - 1----->
+   <div class="last-index" id="bottomText1">
+     <h3>Free Lessons</h3>
+     <p>අපගෙ Free Ethical Hacking Lesson වල තොරතුරු ලබා ගැනීමට සහා join වීමට පහත join now Click කරන්න.</p>
+     <button onclick="goTofree()">JOIN NOW</button>
+   </div>
+   
+   <!--- last-index - 2----->
+   <div class="last-index" id="bottomText2">
+     <h3>Membership Lessons</h3>
+     <p>අපගෙ Membership Ethical Hacking Lesson වල තොරතුරු ලබා ගැනීමට
+උදා - මිල ගණන් වැනි
+තොරතුරු ලබා ගැනීමට සහා join වීමට පහත join now Click කරන්න..</p>
+     <button class="btn" onclick="goTomember()">JOIN NOW</button>
+   </div>
+   
+   <!--- last-index - 3----->
+   <div class="last-index">
+     <h3>Paid Lessons </h3>
+     <p>මෙය තවමත් සූදානම් තත්වයෙ ඇති බැවින් මෙය ඉදිරියේදි බලාපොරොත්තු වන්න. .</p>
+     <button id="link3">SOON...</button>
+   </div>
+ </div>
+
+<!---- skills div ------>
+ <div class="skills-div">
+   <h4>SKILLS</h4>
+  <p class="typewriter" data-text="👉 Ransomeware Create"></p>
+  <p class="typewriter" data-text="👉 Blutooth Sniff / Jamming"></p>
+  <p class="typewriter" data-text="👉 GSM attack"></p>
+  <p class="typewriter" data-text="👉 DarkNet Lesson"></p>
+  <p class="typewriter" data-text="👉 Device Hacking"></p>
+  <p class="typewriter" data-text="👉 Social Media Hacking"></p>
+  <p class="typewriter" data-text="👉 Bug Bounty"></p>
+  <p data-text="👉 Vulnerability Analysis"></p>
+  <p class="typewriter" data-text="👉 Keylogging"></p>
+  <p class="typewriter" data-text="👉 XSS"></p>
+  <p class="typewriter" data-text="👉 Packet Sniff"></p>
+  <p class="typewriter" data-text="👉 SS7 attack"></p>
+  <p class="typewriter" data-text="👉 New Hacking Tools"></p>
+  <p class="typewriter" data-text="👉 Other"></p>
+  </div>
+
+
+
+<!---- skills -box---->
+<div class="skills-box">
+  <p>👉 මොකක්ද ethical hacking කියන්නෙ.</p>
+  <p>👉 Hackers ලා වර්ග</p>
+  <p>👉 Kali Linux All Tools (600+)</p>
+  <p>👉 Wifi Attack</p>
+  <p>👉 Wordlist Create</p>
+  <p>👉 Web Site Attack</p>
+  <p>👉 Social Engineer Attack</p>
+  <p>👉 Phishing Page Create</p>
+  <p>👉 Payload Create</p>
+  <p>👉 Information Gathering</p>
+  <p>👉 Malware analyze</p>
+  <p>👉 Carding Method</p>
+  <p>👉 Ip Cracking</p>
+  <p>👉 Web Hooking</p>
+ </div>
+
+
+<!----- img and lins ----->
+<div class="video">
+  <h3>Our Videos 👇</h3>
+    <div class="slider-container" id="sliderContainer">
+    <div class="slider" id="slider">
+      <a href="https://youtu.be/g_89mU6siJ0?si=qfUl909eW5_mPY4t" target="_blank">
+        <img src="yt-1.jpg" alt="YouTube Thumbnail 1">
+      </a>
+      <!---- img---box-2----->
+      <a href="https://youtu.be/88EAzzEOSEw?si=l-VXnlZVNX9qrX_Z" target="_blank">
+        <img src="yt-2.jpg" alt="YouTube Thumbnail 2">
+      </a>
+      <!---- img---box-3----->
+      <a href="https://youtu.be/1UY-hzY8WgI?si=EiuWbJYyzMQw3GI_" target="_blank">
+        <img src="yt-3.jpg" alt="YouTube Thumbnail 3">
+      </a>
+      <!---- img---box-4----->
+      <a href="https://youtu.be/mbNc_GOxyKM?si=AnOcbtRpIerJJnQO" target="_blank">
+        <img src="yt-4.jpg" alt="YouTube Thumbnail 4">
+      </a>
+      <!---- img---box-5----->
+      <a href="https://youtu.be/3fXc-LpWt3c?si=lLqiueQTL-28oQkK" target="_blank">
+        <img src="yt-5.jpg" alt="Screenshot 4">
+      </a>
+      <!---- img---box-6----->
+      <a href="https://youtu.be/Cv94KSEXSRQ?si=0WvhbmLIX4PMvr0D" target="_blank">
+        <img src="yt-6.jpg" alt="Screenshot 4">
+      </a>
+      <!---- img---box-7----->
+      <a href="https://youtube.com/playlist?list=PLlX3a2OfsofIJLzH4p-7qNFfSwMTDlpwr&si=hj-iJNE0dK-VH9js" target="_blank">
+        <img src="yt-7.jpg" alt="Screenshot 4">
+      </a>
+    </div>
+    <button class="button btn-left" onclick="prevSlide()">&#10094;</button>
+    <button class="button btn-right" onclick="nextSlide()">&#10095;</button>
+  </div>
+   </div>
+
+
+
+<!----- news ------- 🌝---->
+<div class="news">
+   <div class="news-box">
+   <img src="news-image.jpg" alt="Hacking"/>
+   <h2>NEWS</h2>
+   <span></span>
+   <p class="animatedText">ඔබ අපෙ කලින් lesson විඩියො නැරඹීමට මෙම facebook පිටුවට පිවිසෙන්න.</p>
+  </div>
+   <!------ news-box 2 +----->
+   <div class="news-box">
+   <a href="https://www.facebook.com/CyberTube1">https://www.facebook.com/CyberTube1</a>
+   <p class="animatedText">Facebook page එකක් තුල lesson කිරිමට හේතුව youtube වගෙ platform වල දැන් මේ සම්බන්ධ video upload කල නොහැකි නිසා සහා patreon වගෙ site වල කරන්න තිබ්බා ඒත් internet package ප්‍රශ්ණ ගැන හිතලා අපි facebook පැත්තට යන්න හිතුවා.</p>
+   </div>
+  <!------ news-box 3 +----->
+  <div class="news-box">
+    <h3>ඒ වගේම තව දෙයක් අව්රුදු 16 අඩු අයට membership එක free කරන්නෙ.</h3>
+    <span></span>
+    
+    <p class="animatedText">Guys 16 අඩු කට්ටිය විතරක් free කරන්න හේතුව මොකද ගොඩක් දක්ෂ අය ඉන්නවා හැබැයි 18 වෙනකම් ඉන්න ඕන මොකක් හරි කෝස් එකක් කරන්න ඒ වගේ දේවල් හින්දා තමා 16ට අඩු අයට free කරන්නෙ 16ට අඩු කියන්නෙ O/l යනකම් ඉන්න හැම මල්ලි කෙනෙක්ටම නංගි කෙනෙක්ටම මේ ඔක්කොම free.</p></div>
+    <!------ news-box 4 +----->
+    <div class="news-box">
+      <h3>අපෙ CyberTube හී Free lesson සහා membership ලෙස lesson දෙකක් තියෙනවා.</h3>
+      <span></span>
+      
+      <p class="animatedText">free lesson එක සහා membership එක ගැන අදහසක් ගන්න ඉහත lesson තෝරන්න.</p>
+    </div>
+ </div>
+ 
+ <div class="main-news">
+   <h2>අප උගන්වන ලද lesson වලට සම්බන්ද වූ අයට</h2>
+   <!---- main-naws-box 1 ----->
+   <div class="main-news-box">
+     <h4>Membership</h4>
+     <span></span>
+     <p>අපගෙ membership එක ලබා ගන්නා අයට whatsapp මගින් සහය ලබා දේ.</p>
+   </div>
+   <!---- main-naws-box 2 ----->
+   <div class="main-news-box">
+     <h4>Free</h4>
+     <span></span>
+     <p>අපගේ free lesson බලන අයටද ethical hacking මුල ඉදලා සරලව ඉගෙන ගන්න පුලුවන්.</p>
+   </div>
+   <!---- main-naws-box 3 ----->
+   <div class="main-news-box">
+     <h4>YouTube , Facebook</h4>
+     <span></span>
+     <p>ඔබ නොමිලෙ ethical hacking ඉගෙන ගන්නව නම් youtube සහා facebook ඔස්සෙ සම්බන්ද වෙන්න පුලුවන්.</p>
+   </div>
+   <!---- main-naws-box 4 ----->
+   <div class="main-news-box">
+     <h4>CyberTube</h4>
+     <span></span>
+     <p>ලංකාවෙ නොමිලේ ethical hacking practical සමග උගන්වන සුපිරිම තැන.</p>
+   </div>
+ </div>
+
+
+
+<!------ Questions-div----->
+ <div class="Questions-div">
+   <img src="Questions-img.jpg" alt="Hacking"/>
+   <h4>Questions</h4>
+   <p>ඔබට ඇති ප්‍රශ්ණ විසදන්න.</p>
+   
+   <!---- Questions-box 1------>
+   <div class="Questions-main">
+ <div class="toggle-box">
+  <div class="toggle-header">
+    <div class="toggle-box">මිල ගණන් කොහොමද?</div>
+    <span>➢</span>
+  </div>
+  <div class="toggle-content">
+    <p>අපගෙ මෙම lesson Free සහා Membership ලෙස කොටස් දෙකක් ඇති බැවින් වැඩිදුර තොරතුරු ලබා ගැනීමට මෙහ කරන්න 👇 </p>
+    <a class="link" href="https://wa.me/+94721986326">Click</a>
+  </div>
+</div>
+   <!---- Questions-box 2------>
+   <div class="toggle-box">
+  <div class="toggle-header">
+    <div class="toggle-box">ඔබව සම්බන්ද කරගන්නෙ කෙසේද?</div>
+    <span>➢</span>
+  </div>
+  <div class="toggle-content">
+    <a href="https://wa.me/+94721986326">👉 whatsapp - wa.me/+94721986326</a>
+    
+    <a href="https://whatsapp.com/channel/0029Va4Xo1o4yltJJsKxjf0A">👉 Whatsapp channel -</a>
+    
+    <a href="https://t.me/CyberTubeEthical">👉 Telegram - https://t.me/CyberTubeEthical</a>
+    
+    <a href="https://www.facebook.com/CyberTube1">👉 Facebook - https://www.facebook.com/CyberTube1</a>
+    
+    <a href="👉 Youtube - https://youtube.com/@cybertube2024">👉 Youtube - https://youtube.com/@cybertube2024</a>
+  </div>
+</div>
+   <!---- Questions-box 3------>
+   <div class="toggle-box">
+  <div class="toggle-header">
+    <div class="toggle-box">COURSE එක දැන් BUY කරාට බලන්න වෙලාවක් නෑ , පස්සේ බලන්න පුලුවන්ද ?</div>
+    <span>➢</span>
+    </div>
+  <div class="toggle-content">
+    <p>ඔව්. අපි membership එක නම් private සමූහයක කරන්නෙ ඒ නිසා ඔබට ඕනෑම වෙලාවක නැරඹිය හැකි පරිදි සකසා ඇත. Free lesson ඔබට youtube මගින් ලබා ගත හැක.</p>
+  </div>
+</div>
+   <!---- Questions-box 4------>
+   <div class="toggle-box">
+  <div class="toggle-header">
+    <div class="toggle-box">COURSE එක BUY කරාට පස්සේ ඔයාල ලගින් ඉදන් උදව් කරනවද ?</div>
+    <span>➢</span>
+    </div>
+  <div class="toggle-content">
+    <p>ඔව්. අපි ඔබට whatsapp සමූහයකට add කරන අතර ප්‍රශ්ණ තිබේ නම් අපෙන් හො එම සමූහයෙන් පිලිතුරු ලබා ගන්න පුලුවන්.</p>
+  </div>
+</div>
+ <!---- Questions-box 5------>
+   <div class="toggle-box">
+  <div class="toggle-header">
+    <div class="toggle-box">Payment එක කරන්නෙ කොහොමද?</div>
+    <span>➢</span>
+    </div>
+  <div class="toggle-content">
+    <p>Bank Payment, Binance Payment තියෙන නිසා ලේසියෙන්ම payment කරන්න පුලුවන්. ඒ සදහා ඉහත membership lessons තෝරා මාව සම්බන්ද කරගන්න.</p>
+  </div>
+</div>  
+ </div>
+</div>
+
+<!---- <footer>=====----->
+    <div class="footer">
+      <div class="icon-box">
+        <!---- link-box 1 ---->
+        <a href="https://www.facebook.com/CyberTube1">
+      <i class="fa-brands fa-facebook fa-beat" style="color: #192fbf;"></i>
+      </a>
+     
+     <!---- link-box 2 ---->
+     <a href="https://youtube.com/@cybertubelk">
+        <i class="fa-brands fa-youtube fa-beat" style="color: #ff0000;"></i>
+      </a>
+     
+     <!---- link-box 3 ---->
+     <a href="https://whatsapp.com/channel/0029Va4Xo1o4yltJJsKxjf0A">
+      <i class="fa-brands fa-square-whatsapp fa-beat" style="color: #00ff00;"></i>
+      </a>
+      
+      <!---- link-box 4 ---->
+      <a href="https://t.me/CyberTubeEthical">
+      <i class="fa-brands fa-telegram fa-beat" style="color: #1f7ede;"></i>
+      </a>
+      </div>
+      <footer>
+        &copy; Sri Lanka Best Ethical Hacking Learning Platform
+      </footer>
+    </div>
+
+
+
+
+
+
+</main>
+<script src="script.js"></script> 
+<script src="animation.js"></script>
+<script src="loading.js"></script>
+<script src="time.js"></script>
+</body>
+</html>

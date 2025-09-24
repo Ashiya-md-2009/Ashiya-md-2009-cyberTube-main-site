@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyber security</title>
+  
+  <!---- font--->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  
+  
+  <header class="nav" role="navigation">
+  <div class="logo">
+    <div class="logo-badge"><img src="CyberTube.jpg" alt="hacker" /></div>
+    <div class="logo-text">
+      <div class="logo-main">
+        <div class="glitch" data-text="cybertube"><span class="title type">cybertube</span></div>
+        <div class="cursor" aria-hidden="true"></div>
+      </div>
+      <div style="font-size:11px;color: #444;margin-top:4px; font-weight: 600;">Ethical • Hacking</div>
+    </div>
+  </div>
+
+  <nav class="navlinks">
+    <ul id="menu">
+      <li><a href="#home" data-key="home"><span class="inner">HOME</span></a></li>
+      <li><a href="#browse" data-key="browse"><span class="inner" id="openModal">Profile</span></a></li>
+      <li><a href="#download" data-key="download"><span class="inner">DOWNLOAD</span></a></li>
+      <li><a href="#tools" data-key="tools"><span class="inner">TOOLS</span></a></li>
+      <li><a href="#about" data-key="about"><span class="inner">ABOUT</span></a></li>
+    </ul>
+    <div id="indicator" class="active-indicator"></div>
+  </nav>
+
+  <div class="controls">
+    <div class="search">
+      <input placeholder="Search..." />
+    </div>
+<button class="back-btn" onclick="window.history.back()">back</button>
+   
+    <button class="hamburger" id="hambtn"><span class="bar"></span></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#home">HOME</a>
+  <a href="#tools">TOOLS</a>
+  <a href="#about">ABOUT</a>
+  
+  <div class="nav-icon">
+    <!---- whatsapp ----->
+    <a href="https://whatsapp.com/channel/0029Va4Xo1o4yltJJsKxjf0A"><i class="fa-brands fa-whatsapp" style="color: #00FF00;"></i></a>
+    <!---- web site ----->
+    <a href="https://cybertube.free.nf"><i class="fa-solid fa-blog"></i></a>
+    <!---- Telegram ------>
+    <a href="https://t.me/CyberTubeEthical"><i class="fa-brands fa-telegram" style="color: #178DE0;"></i></a>
+    <!-------- facebook ------>
+    <a href="https://www.facebook.com/CyberTube1"><i class="fa-brands fa-facebook" style="color: #1542AF;"></i></a>
+    <!------ discord ----->
+    <a href="https://discord.gg/Y9EtJN66q8"><i class="fa-brands fa-discord" style="color: #0141A1;"></i></a>
+    <!------ youtube ---------->
+    <a href="https://youtube.com/@cybertubelk"><i class="fa-brands fa-youtube" style="color: red;"</i></a>
+  </div>
+</div>
+  
+  
+  
+  <!-- Backdrop + Modal -->
+<div class="backdrop" id="backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="card" role="document" aria-labelledby="profileTitle">
+   <button class="close-x" id="closeBtn" aria-label="Close modal">&times;</button>
+
+    <div class="avatar" aria-hidden="true"><img src="CyberTube.jpg" alt="img" /></div>
+    <h2 id="profileTitle">CyberTube</h2>
+    <div class="sub">Ethical Hacking</div>
+
+    <div class="pills" role="list">
+      <!-- WhatsApp -->
+      <a class="pill" role="listitem" href="https://wa.me/94721986326" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="text">
+          <div class="title">WhatsApp</div>
+          <div class="muted">+94 72 198 6326</div>
+        </div>
+      </a>
+      <!-- WhatsApp chanel -->
+    <a class="pill" role="listitem" href="https://whatsapp.com/channel/0029Va4Xo1o4yltJJsKxjf0A" target="_blank" rel="noopener noreferrer">
+        <div class="icon">🌐</div>
+        <div class="text">
+          <div class="title">WhatsApp channel</div>
+          <div class="muted">cyberTube</div>
+        </div>
+      </a>
+      <!---- Telegram--->
+      <a class="pill" role="listitem" href="https://t.me/CyberTubeEthical" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><i class="fa-brands fa-telegram"></i></div>
+        <div class="text">
+          <div class="title">Telegram</div>
+          <div class="muted">Ethical Hacking</div>
+        </div>
+      </a>
+     <!-----Facebook------->
+     <a class="pill" role="listitem" href="https://www.facebook.com/CyberTube1" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+        <div class="text">
+          <div class="title">CyberTube (Cyber Security)</div>
+          <div class="muted">Ethical Hacking Learn With Me</div>
+        </div>
+      </a>
+      <!----- Discord Server ------>
+      <a class="pill" role="listitem" href="https://discord.gg/Y9EtJN66q8" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><i class="fa-brands fa-discord"></i></div>
+        <div class="text">
+          <div class="title">Discord Server</div>
+          <div class="muted">Ethical Hacking</div>
+        </div>
+      </a>
+      <!-----web site ------->
+      <a class="pill" role="listitem" href="https://www.cybertube.free.nf" target="_blank" rel="noopener noreferrer">
+        <div class="icon">🌐</div>
+        <div class="text">
+          <div class="title">cyberTube-web</div>
+          <div class="muted">Ethical Hacking</div>
+        </div>
+      </a>
+      <!---- YouTube ------->
+      <a class="pill" role="listitem" href="https://youtube.com/@cybertubelk" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><i class="fa-brands fa-youtube"></i></div>
+        <div class="text">
+          <div class="title">YouTube</div>
+          <div class="muted">Ethical Hacking</div>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+</div>
+  
+  
+  
+  
+  
+  <!------ main-div+------->
+<div class="main-div" id="height: 100vh;">
+  <div class="main-image">
+    <img src="CyberTube.jpg" alt="img"/>
+    <h1>Ethical Hacker Cyber Security</h1>
+    <p>Cybersecurity හා Ethical Hacking එකිනෙක සම්බන්ධ තේරුම් දෙකක් වුණත්, විශේෂයෙන්ම අරමුණු සහ ක්‍රියාවලීන් වෙනස් වේ. (පහත ඇත්තෙ chat gpt මගින් ලබා ගත් දත්ත වේ.)</p>
+  </div>
+  
+  <!-----last image ----->
+  <div class="last-image">
+    <img class="img" src="Hacker-img-2.png" alt="img"/>
+    <h2>Ethical Hacker</h2>
+    <span></span>
+    <p>Cybersecurity හරහා ආරක්ෂිත පද්ධති වලට පිවිසෙන්න පුළුවන් දුර්වලතා හඳුනා ගැනීම.</p>
+    <p>Unauthorized attackers (black hat hackers) සේ ආසාධනීය ක්‍රියාවන් සිදු නොකරමින්, නීතිමය සහිත ආරක්ෂාව ශක්තිමත් කිරීම</p>
+    <p>පිළිබඳ ක්‍රියාවලි: Penetration testing, vulnerability assessments, Red teaming, Social engineering attacks simulation.</p>
+    <p>වැඩ: Penetration tester, Red team operator, Bug bounty hunter, Ethical hacker</p>  
+  </div>
+  
+  <!---- last-box ------>
+<div class="last-div"> 
+  <h3>VS</h3>
+  <h2>Cyber Security</h2>
+  <span></span>
+  <p>සංවිධාන හා පෞද්ගලික පද්ධති ආරක්ෂා කිරීමේ සම්පූර්ණ ක්ෂේමය.
+ව්‍යාපාර, රජයේ ආයතන, සහ පුද්ගලික දත්ත ආරක්ෂා කිරීමේ වගකීම සහිතයි.</p>
+
+<p>පිළිබඳ ක්‍රියාවලි: ගිණුම් ආරක්ෂාව, මාලවෙයා ආරක්ෂාව, firewall, intrusion detection, encryption, access control වැනි ආරක්ෂක ක්‍රියාවලි.</p>
+
+<p>වැඩ: Security analyst, Incident responder, SOC analyst, Security engineer, CISO වැනි තනතුරු.</p>
+</div>
+
+  <!---Hacking-box---->
+  <div class="hacker-box">
+    <p>මම හිතනවා ඔබට දැන් ETHICAL HACKING සහා CYBER SECURITY අතර වෙනස පැහැදිලි ඇති. මෙය chat gpt හරහා ගත් නිසා වචන වල දෝෂ තිබිය හැකිය. ඔයා දැන් ඉගෙන ගන්නෙ මොන වගේ දෙයක්ද දන්නවා.</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
