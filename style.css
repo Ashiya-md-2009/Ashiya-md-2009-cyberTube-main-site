@@ -410,6 +410,7 @@ nav a:hover .inner {
   width: 150px;
   border: 1px solid #00FF00;
   border-radius: 50%;
+  margin-bottom: 40px;
   transition: .4s;
 }
 
@@ -1326,6 +1327,7 @@ nav a:hover .inner {
  .footer {
    margin-top: 50px;
    text-align: center;
+   font-family: 'Poppins', sans-serif;
  }
  
 .icon-box > a {
